@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>nba.com</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="nba.css">
+<link rel="stylesheet" href="tickets.css">
+<link rel="stylesheet" href="login.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+     
+<div class="top">
+  <div class="bar black card">
+    <a class="bar-item homelogo"><img src="niba.jpg" width="70px" height="40px"></a>
+    <a href="#" class="bar-item button padding-large">HOME</a>
+    <a href="#nba" class="bar-item button padding-large hide-small">NBA</a>
+    <a href="#games" class="bar-item button padding-large hide-small">UPCOMING GAMES</a>
+    <a href="#news" class="bar-item button padding-large hide-small">NEWS</a>
+    <a href="#highlights" class="bar-item button padding-large hide-small">HIGHLIGHTS</a>
+    <a href="#contact" class="bar-item button padding-large hide-small">CONTACT</a>
+	<a href="#login" class="bar-item button padding-large hide-small">LOGIN</a>
+	<a href="#signup" class="bar-item button padding-large hide-small">SIGNUP</a>
+    <a href="https://www.youtube.com/@NBA" target="_blank" rel="noopener noreferrer"> <i class="fa fa-youtube"> </i> </a>
+    <a href="https://www.facebook.com/NBA" target="_blank" rel="noopener noreferrer"> <i class="fa fa-facebook"> </i> </a>
+    <a href="https://www.twitter.com/NBA" target="_blank" rel="noopener noreferrer"> <i class="fa fa-twitter"> </i> </a>
+    <a href="https://www.instagram.com/nba" target="_blank" rel="noopener noreferrer"> <i class="fa fa-instagram"> </i> </a>
+  </div>
+</div>
+
+<div class="content" style="max-width:2000px;margin-top:46px">
+
+  <div class="mySlides display-container center">
+    <img src="court1.webp" style="width:100%"> 
+  </div>
+  <div class="mySlides display-container center">
+    <img src="court2.jpg" style="width:100%">
+  </div>
+  <div class="mySlides display-container center">
+    <img src="court3.jpg" style="width:100%">
+    </div>
+  <div class="mySlides display-container center">
+    <img src="court4.jpg" style="width:100%">
+    <div class="display-bottommiddle container text-white padding-32 hide-small">
+      <h3>Lebron James</h3>
+      <p><b>One of the greates NBA players</b></p>    
+    </div>
+  </div>
+
+  <div class="container content center padding-64" style="max-width:800px" id="nba">
+    <h2 class="wide">National Basketball Association</h2>
+    <p class="opacity"><i>America's pastime</i></p>
+    <p class="justify">The National Basketball Association, or NBA, 
+      is a professional basketball league comprised of 30 teams across North America featuring the best
+       basketball players in the world.</p>
+    <div class="row padding-32">
+      <div class="third">
+        <p>NBA's current commissioner</p>
+        <a href="https://i.pinimg.com/564x/44/62/58/44625874f9f07c7884f5daa1f03303e9.jpg" target="_blank" rel="noopener noreferrer"> <img src="Adam.jpg" class="round margin-bottom" alt="error" style="width:80%"> </a>
+      </div>
+      <div class="third">
+        <p>A competitive Field</p>
+        <a href="https://i.pinimg.com/564x/d8/74/59/d87459ac228d8fde14a5bf5f0e6d5496.jpg" target="_blank" rel="noopener noreferrer"> <img src="rival.jpg" class="round margin-bottom" alt="error" style="width:80%"> </a>
+      </div>
+      <div class="third">
+        <p>The National Basketball Association logo</p>
+        <a href="https://i.pinimg.com/564x/f0/63/61/f06361c316f3bce30150b0542e6aa24f.jpg" target="_blank" rel="noopener noreferrer"> <img src="niba.jpg" class="round" alt="error" style="width:80%"> </a>
+      </div>
+    </div>
+  </div>
+
+ <div class="black" id="games">
+  <div class="container content padding-64" style="max-width:800px">
+    <h2 class="wide center">Upcoming games</h2>
+    <p class="opacity center"><i>Remember to book your tickets!</i></p><br>
+    <div class="row-padding padding-32" style="margin:0 -16px">
+      <div class="third margin-bottom">
+        <img src="pistonsvsspurs.png" alt="pistonsvspurs" style="width:100%" class="hover-opacity">
+        <div class="container white">
+          <p><b>In Detroit</b></p>
+          <p class="opacity">Thu 11 jan 2024</p>
+          <button class="button black margin-bottom" data-game="cubs-vs-cards" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+        </div>
+      </div>
+      <div class="third margin-bottom">
+        <img src="mavericksvsknicks.png" alt="mavericksvsknicks" style="width:100%" class="hover-opacity">
+        <div class="container white">
+          <p><b>In Dallas</b></p>
+          <p class="opacity">Fri Jan 12 2024</p>
+          <button class="button black margin-bottom" data-game="astros-vs-dodgers" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+        </div>
+      </div>
+      <div class="third margin-bottom">
+        <img src="bullsvswarriors.png" alt="bullsvswarriors" style="width:100%" class="hover-opacity">
+        <div class="container white">
+          <p><b>In Chicago</b></p>
+          <p class="opacity">Sat Jan 13 2024</p>
+          <button class="button black margin-bottom" data-game="giants-vs-yankees" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="ticketModal" class="modal">
+  <div class="modal-content animate-top card-4">
+    <header class="container mlbblue center padding-32"> 
+     <span onclick="document.getElementById('ticketModal').style.display='none'" 
+       class="button mlbblue xlarge display-topright">x</span>
+      <h2 class="wide">Tickets</h2>
+    </header>
+    <div class="container">
+      <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
+      <input id="ticket-quantity" class="input border" type="number" placeholder="Please enter a number of tickets">
+      <p><label><i class="fa fa-user"></i> Send To</label></p>
+      <input id="ticket-email" class="input border" type="email" placeholder="Enter email">
+      <button id="pay-button" class="button block mlbblue padding-16 section right">PAY</button>
+      <button class="button red section" onclick="document.getElementById('ticketModal').style.display='none'">Cancel</button>
+    </div>
+  </div>
+</div>
+
+
+
+<table id="tickets-table">
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>Email</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+  <!-- Rows will be added dynamically -->
+  </tbody>
+</table>
+
+<div class="container content center padding-64" style="max-width:5000px" id="news">
+  <h2 class="wide">News</h2>
+  <div class="row padding-32">
+    <div class="third">
+      <img src="Nikola Jokic.jpg" class="round margin-bottom" alt="Nikola Jokic" style="width:75%">
+      <center> <h3> <b> Nikola Jokic named as the best player in the league. </b> </h3> </center>
+      <button class="button black margin-bottom" onclick="document.getElementById('1stnewsModal').style.display='block'">Read more</button>
+    </div>
+    <div class="third">
+      <img src="morant.webp" class="round margin-bottom" alt="morant" style="width:90%">
+      <center> <h3> <b> Ja Morant injury: Grizzlies star's shoulder tear ends his season after only nine games. </b> </h3> </center>
+      <button class="button black margin-bottom" onclick="document.getElementById('2ndnewsModal').style.display='block'">Read more</button>
+    </div>
+    <div class="third">
+      <img src="Spoelstra.webp" class="round" alt="champs" style="width:88%"> <br> <br>
+      <center> <h3> <b> Heat sign Erik Spoelstra to record-breaking $120 million contract. </b> </h3> </center>
+      <button class="button black margin-bottom" onclick="document.getElementById('3rdnewsModal').style.display='block'">Read more</button>
+    </div>
+   </div>
+</div>
+
+<div id="1stnewsModal" class="modal">
+  <div class="modal-content animate-top card-4">
+    <header class="container mlbblue center padding-32"> 
+      <span onclick="document.getElementById('1stnewsModal').style.display='none'" 
+     class="button mlbblue xlarge display-topright">x</span>
+    </header>
+    <div class="container">
+      <br> <b>Once again, Jokic has been the best offensive player in basketball. With a more complete team around him, the back-to-back MVP is taking fewer shots, scoring fewer points and, somehow, outdoing himself. That he's averaging about 25 points is mind-boggling, since he's doing it on 70-plus percent true shooting and  near leading the league in assists. Every all-in-one advanced stat tells the same story, and Jokic's on/off numbers are insane. The art of his game, however, is just as impressive as the science. He is simultaneously the poster boy for efficiency and one of the most creative players who has ever lived
+       Here's the top 15 players in the league  : </b> <br> <br>
+       #15 Kawhi Leonard <br>
+       #14 Domantas Sabonis <br>
+       #13 Jaylen Brown <br> 
+       #12 Donovan Mitchell <br> 
+       #11 LeBron James <br> 
+       #10 Ja Morant <br> 
+       #9 Damian Lillard <br> 
+       #8 Shai Gilgeous-Alexander <br> 
+       #7 Stephen Curry <br> 
+       #6 Kevin Durant <br> 
+       #5 Joel Embiid <br> 
+       #4 Jayson Tatum <br> 
+       #3 Luka Doncic <br>
+       #2 Giannis Antetokounmpo <br> 
+       #1 Nikola Jokic
+    </div>
+  </div>
+</div>
+
+<div id="2ndnewsModal" class="modal">
+  <div class="modal-content animate-top card-4">
+    <header class="container mlbblue center padding-32"> 
+      <span onclick="document.getElementById('2ndnewsModal').style.display='none'" 
+     class="button mlbblue xlarge display-topright">x</span>
+    </header>
+    <div class="container">
+      <br> Memphis Grizzlies guard Ja Morant will miss the remainder of the season with a torn labrum. It is devastating news for the Grizzlies, who were finally starting to establish some momentum after a treacherous start to the season. Memphis was 6-3 in the nine games Morant had played in, over which he averaged 25.1 points, 8.1 assists and 5.6 rebounds. 
+      <br>Morant had missed Sunday's game against the Phoenix Suns, with what was deemed a sore right shoulder.</br>
+      <br> Previously, Morant, who inked a five-year, $193 million rookie extension to remain with the Grizzlies in 2022, opened the 2023-24 season with a 25-game suspension as a result of multiple instances in which he brandished a firearm on social media. </br> 
+      <p style="font-size:15pt;"> <b> For his career, the 24-year old Morant has averaged 22.5 points, 4.8 rebounds and 7.4 assists per game.  </b></p>
+    </div>
+  </div>
+</div>
+
+<div id="3rdnewsModal" class="modal">
+  <div class="modal-content animate-top card-4">
+    <header class="container mlbblue center padding-32"> 
+      <span onclick="document.getElementById('3rdnewsModal').style.display='none'" 
+     class="button mlbblue xlarge display-topright">x</span>
+    </header>
+    <div class="container">
+      <br> Erik Spoelstra is widely considered to be one of the best coaches in the NBA, if not the best, and now he has a record-breaking contract to go with his lofty status. </br>
+      <br>According to Adrian Wojnarowski, the Miami Heat have signed Spoelstra to an eight-year extension worth more than <b>$120 million</b>, which, per ESPN, is not just the highest amount of money that has ever been committed to an NBA coach, but any North American coach of any sport. </br>
+    <br> Spoelstra, who is 53 years old, has led the Heat to six NBA Finals appearances and two championships. He consistently squeezes the absolute most out of whatever roster he is afforded -- injuries and/or key-player departures notwithstanding. </br>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="container content center padding-64" style="max-width:5000px" id="highlights">
+  <h2 class="wide">Highlights</h2>
+  <video autoplay muted loop id="myVideo" style="width: 50%;">
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            
+            <div class="content">
+                <button id="myBtn" onclick="myFunction()">Pause</button>
+            </div>
+  <div class="row padding-32">
+    <div class="third">
+      <div class="round margin-bottom"> <iframe width="400" height="300" src="https://www.youtube.com/embed/w1PJWKYWV0Y">
+      </iframe> 
+	  </div>
+    </div>
+    <div class="third">
+      <div class="round margin-bottom"><iframe width="400" height="300" src="https://www.youtube.com/embed/R6Eazb-rjZg" >
+
+      </iframe></div>
+    </div>
+    <div class="third">
+      <div class="round margin-bottom"> <iframe width="400" height="300" src="https://www.youtube.com/embed/on-MFUeEaik">
+      </iframe> </div>
+    </div>
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <hr>
+
+  <div class="container content padding-64" style="max-width:800px" id="contact">
+    <h2 class="wide center">CONTACT</h2>
+    <p class="opacity center"><i>Basketball is for the fans, have a suggestion? Drop it below!</i></p>
+    <div class="row padding-32">
+      <div class="col m6 margin-bottom">
+        NBA Headquarters: New York, United States<br>
+        Customer Support number:  1-844-622-8550<br>
+        NBA New Jersey Office number: (201) 865-1500<br>
+        NBA Orlando Office number: (407) 363-5919<br>
+      </div>
+      <div class="col m6">
+        <form>
+          <div class="row-padding" style="margin:0 -16px 8px -16px">
+            <div class="half">
+              <input class="input border" type="text" placeholder="Name" required name="Name">
+            </div>
+            <div class="half">
+              <input class="input border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="input border" type="text" placeholder="Message" required name="Message">
+          <button class="button black section right" type="submit">SEND</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<div class="login-container" id="login">
+<img src="ball.jpeg" style="width:100%">
+      <h1>Login</h1>
+      <form>
+        <div class="email-container">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+          <div class="email-validation"></div>
+        </div>
+        <div class="password-container">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}" required>
+          <div class="password-validation"></div>
+        </div>
+        <button type="submit" id="login-btn">Sign In</button>
+		<p>Don't have an account? <a href="#signup">Register here</a></p>
+      </form>
+    </div>
+	<br>
+	<br>
+ <form>
+      <div class="register-container" id="signup">
+        <h1>Register Here</h1>
+       
+        <div class="name-container">
+          <label for="name"><b>Name</b></label>
+          <input type="text" placeholder="Enter Name" name="name" required>
+          <div class="name-validation validation"></div>
+        </div>
+
+        <div class="email-container">
+          <label for="email"><b>Email</b></label>
+          <input type="email" placeholder="Enter Email" name="email" required>
+          <div class="email-validation validation"></div>
+        </div>
+
+        <div class="password-container">
+          <label for="password"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}" required>
+          <div class="password-validation validation"></div>
+        </div>
+
+        <div class="password-confirm-container">
+          <label for="psw-repeat"><b>Repeat Password</b></label>
+          <input type="password" placeholder="Repeat Password" name="psw-repeat" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}" required>
+          <div class="password-confirm-validation validation"></div>
+        </div>
+        
+
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">SignUp</button>
+        </div>
+      </div>
+    </form>
+
+
+<footer class="container padding-64 center opacity light-grey xlarge" style="padding: 5PX;">
+<p class="medium"><b>Powered by NBA &copy;</b></p>
+</footer>
+
+<script>
+  // Javascript code
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+</script>
+<script>
+const emailField = document.getElementById("email");
+const passwordField = document.getElementById("password");
+const emailValidation = document.querySelector(".email-validation");
+const passwordValidation = document.querySelector(".password-validation");
+const loginBtn = document.getElementById("login-btn");
+
+emailField.addEventListener("input", function(e) {
+  if (emailField.validity.valid) {
+    emailValidation.textContent = "";
+    emailValidation.className = "email-validation";
+  } else {
+    emailValidation.textContent = "Please enter a valid email address.";
+    emailValidation.className = "email-validation active";
+  }
+});
+
+passwordField.addEventListener("input", function(e) {
+  if (passwordField.validity.valid) {
+    passwordValidation.textContent = "";
+    passwordValidation.className = "password-validation";
+  } else {
+    passwordValidation.textContent = "Password must contain at least 8 characters, including uppercase and lowercase letters, digits, and special characters.";
+    passwordValidation.className = "password-validation active";
+  }
+});
+
+loginBtn.addEventListener("click", function(e) {
+  if (!emailField.validity.valid) {
+    emailValidation.textContent = "Please enter a valid email address.";
+    emailValidation.className = "email-validation active";
+    e.preventDefault();
+  }
+  
+  if (!passwordField.validity.valid) {
+    passwordValidation.textContent = "Password must contain at least 8 characters, including uppercase and lowercase letters, digits, and special characters.";
+    passwordValidation.className = "password-validation active";
+    e.preventDefault();
+  }
+});
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+// Open ticket modal when Buy Tickets button is clicked
+$('#games button').click(function() {
+  var game = $(this).data('game');
+  $('#ticketModal').data('game', game).fadeIn();
+});
+
+// Close ticket modal
+function closeTicketModal() {
+  $('#ticketModal').fadeOut();
+  $('#ticket-quantity').val('');
+  $('#ticket-email').val('');
+}
+
+// Handle Pay button click
+$('#pay-button').click(function() {
+  // Get input values
+  var game = $('#ticketModal').data('game');
+  var quantity = $('#ticket-quantity').val();
+  var email = $('#ticket-email').val();
+  
+  if (quantity <= 0 || isNaN(quantity)) {
+    alert('Please enter a positive number of tickets.');
+    return;
+	}
+
+  // Validate email
+  if (!/^\S+@\S+\.\S+$/.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  // Add row to tickets table
+  var row = $('<tr><td>' + game + '</td><td>' + email + '</td><td>' + quantity + '</td><td><button class="delete-button">Delete</button></td></tr>');
+  $('#tickets-table tbody').append(row);
+
+  // Attach click event listener to delete button
+  row.find('.delete-button').click(function() {
+    $(this).closest('tr').remove();
+  });
+
+  // Sort table rows by email
+  var rows = $('#tickets-table tbody tr').get();
+  rows.sort(function(a, b) {
+    var emailA = $(a).find('td:nth-child(2)').text().toUpperCase();
+    var emailB = $(b).find('td:nth-child(2)').text().toUpperCase();
+    if (emailA < emailB) {
+      return -1;
+    }
+    if (emailA > emailB) {
+      return 1;
+    }
+    return 0;
+  });
+  $.each(rows, function(index, row) {
+    $('#tickets-table').children('tbody').append(row);
+  });
+
+  // Close ticket modal
+  closeTicketModal();
+});
+  </script>
+  
+
+<script>
+
+      nameInput.addEventListener("input", validateName);
+      emailInput.addEventListener("input", validateEmail);
+      passwordInput.addEventListener("input", validatePassword);
+      passwordConfirmInput.addEventListener("input", validatePasswordConfirm);
+
+      // Define validation functions
+      function validateName() {
+        var name = nameInput.value.trim();
+        if (name === "") {
+          nameValidation.textContent = "Name is required.";
+          return false;
+        } else {
+          nameValidation.textContent = "";
+          return true;
+        }
+      }
+
+      function validateEmail() {
+        var email = emailInput.value.trim();
+        if (email === "") {
+          emailValidation.textContent = "Email is required.";
+          return false;
+        } else if (!isValidEmail(email)) {
+          emailValidation.textContent = "Invalid email address.";
+          return false;
+        } else {
+          emailValidation.textContent = "";
+          return true;
+        }
+      }
+
+      function validatePassword() {
+        var password = passwordInput.value;
+        if (password === "") {
+          passwordValidation.textContent = "Password is required.";
+          return false;
+        } else if (!isValidPassword(password)) {
+          passwordValidation.textContent = "Password must be at least 8 characters long and contain at least one digit, one lowercase letter, one uppercase letter, and one special character from the set !@#$%^&*()_+.";
+          return false;
+        } else {
+          passwordValidation.textContent = "";
+          return true;
+        }
+      }
+
+      function validatePasswordConfirm() {
+        var password = passwordInput.value;
+        var passwordConfirm = passwordConfirmInput.value;
+        if (passwordConfirm === "") {
+          passwordConfirmValidation.textContent = "Please confirm password.";
+          return false;
+        } else if (password !== passwordConfirm) {
+          passwordConfirmValidation.textContent = "Passwords do not match.";
+          return false;
+        } else {
+          passwordConfirmValidation.textContent = "";
+          return true;
+        }
+      }
+
+      function isValidEmail(email) {
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+
+      function isValidPassword(password) {
+        var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}$/;
+        return passwordRegex.test(password);
+      }
+
+      // Get the sign up button and redirect to login page on successful registration
+      var signUpBtn = document.querySelector(".signupbtn");
+      signUpBtn.addEventListener("click", function() {
+        // Check if all input fields are valid
+        if (validateName() && validateEmail() && validatePassword() && validatePasswordConfirm()) {
+          // Redirect to login page
+          window.location.href = "home.html";
+        }
+      });
+	  
+</script>
+<script>
+// Get the login form element
+  const loginForm = document.getElementById("login");
+
+  // Add an event listener for the form's submit event
+  loginForm.addEventListener("submit", function(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+    
+    // Redirect the user to the home page
+    window.location.href = "mlb.html";
+  });
+</script>
+<script>
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>
+
+<script>
+// Get the form and submit button elements
+var form = document.querySelector('#contact form');
+var submitButton = form.querySelector('button[type="submit"]');
+
+// Attach a click event listener to the submit button
+submitButton.addEventListener('click', function(event) {
+  // Display an alert message
+  alert('Thank you for your message! We will get back to you as soon as possible.');
+
+  // Reset the form
+  form.reset();
+
+  // Prevent the form from submitting
+  event.preventDefault();
+});
+</script>
+</body>
+</html>
