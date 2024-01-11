@@ -13,8 +13,7 @@
      
 <div class="top">
   <div class="bar black card">
-    <a class="bar-item homelogo"><img src="niba.jpg" width="70px" height="40px"></a>
-    <a href="#" class="bar-item button padding-large">HOME</a>
+    <a class="bar-item homelogo" href="#" class="bar-item button padding-large"><img src="niba.jpg" width="70px" height="40px"></a>
     <a href="#nba" class="bar-item button padding-large hide-small">NBA</a>
     <a href="#games" class="bar-item button padding-large hide-small">UPCOMING GAMES</a>
     <a href="#news" class="bar-item button padding-large hide-small">NEWS</a>
@@ -80,7 +79,7 @@
         <div class="container white">
           <p><b>In Detroit</b></p>
           <p class="opacity">Thu 11 jan 2024</p>
-          <button class="button black margin-bottom" data-game="cubs-vs-cards" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+          <button class="button black margin-bottom" data-game="pistons-vs-spurs" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
         </div>
       </div>
       <div class="third margin-bottom">
@@ -88,7 +87,7 @@
         <div class="container white">
           <p><b>In Dallas</b></p>
           <p class="opacity">Fri Jan 12 2024</p>
-          <button class="button black margin-bottom" data-game="astros-vs-dodgers" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+          <button class="button black margin-bottom" data-game="mavericks-vs-knicks" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
         </div>
       </div>
       <div class="third margin-bottom">
@@ -96,7 +95,7 @@
         <div class="container white">
           <p><b>In Chicago</b></p>
           <p class="opacity">Sat Jan 13 2024</p>
-          <button class="button black margin-bottom" data-game="giants-vs-yankees" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+          <button class="button black margin-bottom" data-game="bulls-vs-warriors" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
         </div>
       </div>
     </div>
@@ -106,8 +105,6 @@
 <div id="ticketModal" class="modal">
   <div class="modal-content animate-top card-4">
     <header class="container mlbblue center padding-32"> 
-     <span onclick="document.getElementById('ticketModal').style.display='none'" 
-       class="button mlbblue xlarge display-topright">x</span>
       <h2 class="wide">Tickets</h2>
     </header>
     <div class="container">
@@ -115,26 +112,12 @@
       <input id="ticket-quantity" class="input border" type="number" placeholder="Please enter a number of tickets">
       <p><label><i class="fa fa-user"></i> Send To</label></p>
       <input id="ticket-email" class="input border" type="email" placeholder="Enter email">
-      <button id="pay-button" class="button block mlbblue padding-16 section right">PAY</button>
+      <button id="pay-button" class="button block mlbblue padding-16 section right" onclick="document.getElementById('ticketModal').style.display='none'">PAY</button>
       <button class="button red section" onclick="document.getElementById('ticketModal').style.display='none'">Cancel</button>
     </div>
   </div>
 </div>
 
-
-
-<table id="tickets-table">
-  <thead>
-    <tr>
-      <th>Game</th>
-      <th>Email</th>
-      <th>Quantity</th>
-    </tr>
-  </thead>
-  <tbody>
-  <!-- Rows will be added dynamically -->
-  </tbody>
-</table>
 
 <div class="container content center padding-64" style="max-width:5000px" id="news">
   <h2 class="wide">News</h2>
@@ -257,13 +240,14 @@
         <form>
           <div class="row-padding" style="margin:0 -16px 8px -16px">
             <div class="half">
-              <input class="input border" type="text" placeholder="Name" required name="Name">
+              <input class="input border" type="text" placeholder="Name" name="Name" required>
             </div>
             <div class="half">
               <input class="input border" type="text" placeholder="Email" required name="Email">
             </div>
           </div>
-          <input class="input border" type="text" placeholder="Message" required name="Message">
+          <textarea class="input border"placeholder="Add Comment Here..." required name="Message" rows="5"></textarea>
+          
           <button class="button black section right" type="submit">SEND</button>
         </form>
       </div>
@@ -279,12 +263,11 @@
         <div class="email-container">
           <label for="email">Email Address</label>
           <input type="email" id="email" name="email" required>
-          <div class="email-validation"></div>
         </div>
         <div class="password-container">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}" required>
-          <div class="password-validation"></div>
+          <input type="password" id="password" name="password" minlength="8" required>
+
         </div>
         <button type="submit" id="login-btn">Sign In</button>
 		<p>Don't have an account? <a href="#signup">Register here</a></p>
@@ -299,28 +282,19 @@
         <div class="name-container">
           <label for="name"><b>Name</b></label>
           <input type="text" placeholder="Enter Name" name="name" required>
-          <div class="name-validation validation"></div>
+ 
         </div>
 
         <div class="email-container">
           <label for="email"><b>Email</b></label>
           <input type="email" placeholder="Enter Email" name="email" required>
-          <div class="email-validation validation"></div>
         </div>
 
         <div class="password-container">
           <label for="password"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}" required>
-          <div class="password-validation validation"></div>
-        </div>
-
-        <div class="password-confirm-container">
-          <label for="psw-repeat"><b>Repeat Password</b></label>
-          <input type="password" placeholder="Repeat Password" name="psw-repeat" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}" required>
-          <div class="password-confirm-validation validation"></div>
+          <input type="password" placeholder="Enter Password" name="password" minlength="8" required>
         </div>
         
-
         <div class="clearfix">
           <button type="submit" class="signupbtn">SignUp</button>
         </div>
@@ -349,49 +323,9 @@ function carousel() {
   setTimeout(carousel, 4000);    
 }
 </script>
-<script>
-const emailField = document.getElementById("email");
-const passwordField = document.getElementById("password");
-const emailValidation = document.querySelector(".email-validation");
-const passwordValidation = document.querySelector(".password-validation");
-const loginBtn = document.getElementById("login-btn");
+ 
 
-emailField.addEventListener("input", function(e) {
-  if (emailField.validity.valid) {
-    emailValidation.textContent = "";
-    emailValidation.className = "email-validation";
-  } else {
-    emailValidation.textContent = "Please enter a valid email address.";
-    emailValidation.className = "email-validation active";
-  }
-});
-
-passwordField.addEventListener("input", function(e) {
-  if (passwordField.validity.valid) {
-    passwordValidation.textContent = "";
-    passwordValidation.className = "password-validation";
-  } else {
-    passwordValidation.textContent = "Password must contain at least 8 characters, including uppercase and lowercase letters, digits, and special characters.";
-    passwordValidation.className = "password-validation active";
-  }
-});
-
-loginBtn.addEventListener("click", function(e) {
-  if (!emailField.validity.valid) {
-    emailValidation.textContent = "Please enter a valid email address.";
-    emailValidation.className = "email-validation active";
-    e.preventDefault();
-  }
-  
-  if (!passwordField.validity.valid) {
-    passwordValidation.textContent = "Password must contain at least 8 characters, including uppercase and lowercase letters, digits, and special characters.";
-    passwordValidation.className = "password-validation active";
-    e.preventDefault();
-  }
-});
-</script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
+<script> 
 // Open ticket modal when Buy Tickets button is clicked
 $('#games button').click(function() {
   var game = $(this).data('game');
@@ -405,139 +339,8 @@ function closeTicketModal() {
   $('#ticket-email').val('');
 }
 
-// Handle Pay button click
-$('#pay-button').click(function() {
-  // Get input values
-  var game = $('#ticketModal').data('game');
-  var quantity = $('#ticket-quantity').val();
-  var email = $('#ticket-email').val();
-  
-  if (quantity <= 0 || isNaN(quantity)) {
-    alert('Please enter a positive number of tickets.');
-    return;
-	}
-
-  // Validate email
-  if (!/^\S+@\S+\.\S+$/.test(email)) {
-    alert('Please enter a valid email address.');
-    return;
-  }
-
-  // Add row to tickets table
-  var row = $('<tr><td>' + game + '</td><td>' + email + '</td><td>' + quantity + '</td><td><button class="delete-button">Delete</button></td></tr>');
-  $('#tickets-table tbody').append(row);
-
-  // Attach click event listener to delete button
-  row.find('.delete-button').click(function() {
-    $(this).closest('tr').remove();
-  });
-
-  // Sort table rows by email
-  var rows = $('#tickets-table tbody tr').get();
-  rows.sort(function(a, b) {
-    var emailA = $(a).find('td:nth-child(2)').text().toUpperCase();
-    var emailB = $(b).find('td:nth-child(2)').text().toUpperCase();
-    if (emailA < emailB) {
-      return -1;
-    }
-    if (emailA > emailB) {
-      return 1;
-    }
-    return 0;
-  });
-  $.each(rows, function(index, row) {
-    $('#tickets-table').children('tbody').append(row);
-  });
-
-  // Close ticket modal
-  closeTicketModal();
-});
-  </script>
-  
-
-<script>
-
-      nameInput.addEventListener("input", validateName);
-      emailInput.addEventListener("input", validateEmail);
-      passwordInput.addEventListener("input", validatePassword);
-      passwordConfirmInput.addEventListener("input", validatePasswordConfirm);
-
-      // Define validation functions
-      function validateName() {
-        var name = nameInput.value.trim();
-        if (name === "") {
-          nameValidation.textContent = "Name is required.";
-          return false;
-        } else {
-          nameValidation.textContent = "";
-          return true;
-        }
-      }
-
-      function validateEmail() {
-        var email = emailInput.value.trim();
-        if (email === "") {
-          emailValidation.textContent = "Email is required.";
-          return false;
-        } else if (!isValidEmail(email)) {
-          emailValidation.textContent = "Invalid email address.";
-          return false;
-        } else {
-          emailValidation.textContent = "";
-          return true;
-        }
-      }
-
-      function validatePassword() {
-        var password = passwordInput.value;
-        if (password === "") {
-          passwordValidation.textContent = "Password is required.";
-          return false;
-        } else if (!isValidPassword(password)) {
-          passwordValidation.textContent = "Password must be at least 8 characters long and contain at least one digit, one lowercase letter, one uppercase letter, and one special character from the set !@#$%^&*()_+.";
-          return false;
-        } else {
-          passwordValidation.textContent = "";
-          return true;
-        }
-      }
-
-      function validatePasswordConfirm() {
-        var password = passwordInput.value;
-        var passwordConfirm = passwordConfirmInput.value;
-        if (passwordConfirm === "") {
-          passwordConfirmValidation.textContent = "Please confirm password.";
-          return false;
-        } else if (password !== passwordConfirm) {
-          passwordConfirmValidation.textContent = "Passwords do not match.";
-          return false;
-        } else {
-          passwordConfirmValidation.textContent = "";
-          return true;
-        }
-      }
-
-      function isValidEmail(email) {
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-      }
-
-      function isValidPassword(password) {
-        var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}$/;
-        return passwordRegex.test(password);
-      }
-
-      // Get the sign up button and redirect to login page on successful registration
-      var signUpBtn = document.querySelector(".signupbtn");
-      signUpBtn.addEventListener("click", function() {
-        // Check if all input fields are valid
-        if (validateName() && validateEmail() && validatePassword() && validatePasswordConfirm()) {
-          // Redirect to login page
-          window.location.href = "home.html";
-        }
-      });
-	  
 </script>
+
 <script>
 // Get the login form element
   const loginForm = document.getElementById("login");
@@ -548,7 +351,7 @@ $('#pay-button').click(function() {
     event.preventDefault();
     
     // Redirect the user to the home page
-    window.location.href = "mlb.html";
+    window.location.href = "nba.html";
   });
 </script>
 <script>
@@ -580,7 +383,7 @@ submitButton.addEventListener('click', function(event) {
   form.reset();
 
   // Prevent the form from submitting
-  event.preventDefault();
+  // event.preventDefault();
 });
 </script>
 </body>
