@@ -325,21 +325,6 @@ function carousel() {
 </script>
  
 
-<script> 
-// Open ticket modal when Buy Tickets button is clicked
-$('#games button').click(function() {
-  var game = $(this).data('game');
-  $('#ticketModal').data('game', game).fadeIn();
-});
-
-// Close ticket modal
-function closeTicketModal() {
-  $('#ticketModal').fadeOut();
-  $('#ticket-quantity').val('');
-  $('#ticket-email').val('');
-}
-
-</script>
 
 <script>
 // Get the login form element
