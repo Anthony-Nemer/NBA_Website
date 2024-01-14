@@ -1,0 +1,188 @@
+// CONFIRM PASSWORD DIV
+<div class="password-confirm-container">
+          <label for="psw-repeat"><b>Repeat Password</b></label>
+          <input type="password" placeholder="Repeat Password" name="psw-repeat" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}" required>
+          <div class="password-confirm-validation validation"></div>
+        </div>
+
+// VALIDATION SCRIPTS
+
+<script>
+const emailField = document.getElementById("email");
+const passwordField = document.getElementById("password");
+const emailValidation = document.querySelector(".email-validation");
+const passwordValidation = document.querySelector(".password-validation");
+const loginBtn = document.getElementById("login-btn");
+
+emailField.addEventListener("input", function(e) {
+  if (emailField.validity.valid) {
+    emailValidation.textContent = "";
+    emailValidation.className = "email-validation";
+  } else {
+    emailValidation.textContent = "Please enter a valid email address.";
+    emailValidation.className = "email-validation active";
+  }
+});
+
+passwordField.addEventListener("input", function(e) {
+  if (passwordField.validity.valid) {
+    passwordValidation.textContent = "";
+    passwordValidation.className = "password-validation";
+  } else {
+    passwordValidation.textContent = "Password must contain at least 8 characters, including uppercase and lowercase letters, digits, and special characters.";
+    passwordValidation.className = "password-validation active";
+  }
+});
+
+loginBtn.addEventListener("click", function(e) {
+  if (!emailField.validity.valid) {
+    emailValidation.textContent = "Please enter a valid email address.";
+    emailValidation.className = "email-validation active";
+    e.preventDefault();
+  }
+  
+  if (!passwordField.validity.valid) {
+    passwordValidation.textContent = "Password must contain at least 8 characters, including uppercase and lowercase letters, digits, and special characters.";
+    passwordValidation.className = "password-validation active";
+    e.preventDefault();
+  }
+});
+</script>
+<script>
+
+      nameInput.addEventListener("input", validateName);
+      emailInput.addEventListener("input", validateEmail);
+      passwordInput.addEventListener("input", validatePassword);
+      passwordConfirmInput.addEventListener("input", validatePasswordConfirm);
+
+      // Define validation functions
+      function validateName() {
+        var name = nameInput.value.trim();
+        if (name === "") {
+          nameValidation.textContent = "Name is required.";
+          return false;
+        } else {
+          nameValidation.textContent = "";
+          return true;
+        }
+      }
+
+      function validateEmail() {
+        var email = emailInput.value.trim();
+        if (email === "") {
+          emailValidation.textContent = "Email is required.";
+          return false;
+        } else if (!isValidEmail(email)) {
+          emailValidation.textContent = "Invalid email address.";
+          return false;
+        } else {
+          emailValidation.textContent = "";
+          return true;
+        }
+      }
+
+      function validatePassword() {
+        var password = passwordInput.value;
+        if (password === "") {
+          passwordValidation.textContent = "Password is required.";
+          return false;
+        } else if (!isValidPassword(password)) {
+          passwordValidation.textContent = "Password must be at least 8 characters long and contain at least one digit, one lowercase letter, one uppercase letter, and one special character from the set !@#$%^&*()_+.";
+          return false;
+        } else {
+          passwordValidation.textContent = "";
+          return true;
+        }
+      }
+
+      function validatePasswordConfirm() {
+        var password = passwordInput.value;
+        var passwordConfirm = passwordConfirmInput.value;
+        if (passwordConfirm === "") {
+          passwordConfirmValidation.textContent = "Please confirm password.";
+          return false;
+        } else if (password !== passwordConfirm) {
+          passwordConfirmValidation.textContent = "Passwords do not match.";
+          return false;
+        } else {
+          passwordConfirmValidation.textContent = "";
+          return true;
+        }
+      }
+
+      function isValidEmail(email) {
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+
+      function isValidPassword(password) {
+        var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}$/;
+        return passwordRegex.test(password);
+      }
+
+      // Get the sign up button and redirect to login page on successful registration
+      var signUpBtn = document.querySelector(".signupbtn");
+      signUpBtn.addEventListener("click", function() {
+        // Check if all input fields are valid
+        if (validateName() && validateEmail() && validatePassword() && validatePasswordConfirm()) {
+          // Redirect to login page
+          window.location.href = "home.html";
+        }
+      });
+	  
+</script>
+
+// Validate email
+  if (!/^\S+@\S+\.\S+$/.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+
+// STYLESHEET FONY FAMILLY AWSOME
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+/ Handle Pay button click
+$('#pay-button').click(function() {
+  // Get input values
+  var game = $('#ticketModal').data('game');
+  var quantity = $('#ticket-quantity').val();
+  var email = $('#ticket-email').val();
+  
+  if (quantity <= 0 || isNaN(quantity)) {
+    alert('Please enter a positive number of tickets.');
+    return;
+	}
+
+
+  // Add row to tickets table
+  var row = $('<tr><td>' + game + '</td><td>' + email + '</td><td>' + quantity + '</td><td><button class="delete-button">Delete</button></td></tr>');
+  $('#tickets-table tbody').append(row);
+
+  // Attach click event listener to delete button
+  row.find('.delete-button').click(function() {
+    $(this).closest('tr').remove();
+  });
+
+  // Sort table rows by email
+  var rows = $('#tickets-table tbody tr').get();
+  rows.sort(function(a, b) {
+    var emailA = $(a).find('td:nth-child(2)').text().toUpperCase();
+    var emailB = $(b).find('td:nth-child(2)').text().toUpperCase();
+    if (emailA < emailB) {
+      return -1;
+    }
+    if (emailA > emailB) {
+      return 1;
+    }
+    return 0;
+  });
+  $.each(rows, function(index, row) {
+    $('#tickets-table').children('tbody').append(row);
+  });
+
+  // Close ticket modal
+  closeTicketModal();
+});
+  </script>
+  
