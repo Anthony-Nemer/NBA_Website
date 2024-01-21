@@ -67,9 +67,3 @@ button:hover {
   background-color: #555;
 }
 
-.email-validation,
-.password-validation {
-  margin-top: 5px;
-  font-size: 14px;
-  color: red;
-}

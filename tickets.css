@@ -1,35 +1,5 @@
-  /* Style the table */
-  #tickets-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 32px;
-  }
-
-  /* Style the table header */
-  #tickets-table th {
-    background-color: #f2f2f2;
-    color: #333;
-    font-weight: bold;
-    text-align: left;
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
-  }
-
-  /* Style the table rows */
-  #tickets-table td {
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
-  }
-
-  /* Style the odd rows */
-  #tickets-table tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
-  }
-
-  /* Style the hover effect */
-  #tickets-table tbody tr:hover {
-    background-color: #ddd;
-  }
+ 
+  
 
   /* Style the ticket modal */
   .modal {

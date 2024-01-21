@@ -212,3 +212,6 @@ img{vertical-align:middle}
     float: right;
   }
   .mySlides {display: none }
+  .onspot {
+    border: 2px solid black;
+  }
